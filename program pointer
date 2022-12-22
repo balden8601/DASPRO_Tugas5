@@ -1,0 +1,33 @@
+program data;// nama program
+Uses crt; // inout outout                            
+Type ptr = ^string;          
+Var  // variabel      
+    ptrnama, ptrkls, ptrnpm : ptr;
+    nama,kls,npm: string; 
+    x,n : integer;                     
+begin                                                    
+clrscr;                                                   
+    writeln('DATA MAHASISWA ');      
+    writeln('================ ');                        
+    writeln('MASUKKAN ANGKA ');       
+    readln (n);                                          
+    for x := 1 to n do                              
+
+begin                                                    
+    writeln('DATA KE-',x);  //tampilkan                                    
+    write('NAMA  = '); //tampilkan
+    readln(nama);        //baca nama          
+    write('KELAS = ');//tampilkan 
+    readln(kls);      //baca kls                            
+    write('NIM   = '); //tampilkan
+    readln(npm);   //baca nim
+                                 
+    ptrnama := @nama; //mengambil alamat variabel yang ditunjuk user                                    
+    ptrkls := @kls;    //mengambil alamat variabel yang ditunjuk user                 
+    ptrnpm := @npm;    //mengambil alamat variabel yang ditunjuk user         
+    writeln('NAMA  =',ptrnama^);    
+    writeln('KELAS = ',ptrkls^);                           
+    writeln('NIM   = ',ptrnpm^);        
+end; 
+readln;                      
+end.
